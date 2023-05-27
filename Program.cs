@@ -94,6 +94,7 @@ namespace MeksMathGame
 
         static void Main(string[] args)
         {
+            
             WelcomeLabel();
         }
     }
