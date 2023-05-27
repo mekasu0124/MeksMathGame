@@ -94,7 +94,7 @@ namespace MeksMathGame
 
         static void Main(string[] args)
         {
-            
+            Console.Title = "Mek's Math Game - Version 1.0.0";
             WelcomeLabel();
         }
     }
