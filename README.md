@@ -6,7 +6,7 @@
 - [Introduction](#introduction)
 - [Installation](#installation)
 - [How To Play](#how-to-play)
-- [Need Support ?](#need-support)
+- [Need Support](#need-support)
 - [Future Updates](#future-updates)
 </details>
 
