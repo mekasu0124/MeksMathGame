@@ -12,4 +12,8 @@
     <Content Include="Images\icon.ico" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Builds\WindowsBuild\" />
+  </ItemGroup>
+
 </Project>
