@@ -124,7 +124,7 @@
         // instantiate a tries variable
         int tries = 3;
 
-        if (userDesiredQuestionAmount > 100 | userDesiredQuestionAmount > 0)
+        if (userDesiredQuestionAmount > 100 || userDesiredQuestionAmount > 0)
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine(
