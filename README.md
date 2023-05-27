@@ -6,7 +6,7 @@
 - [Introduction](#introduction)
 - [Installation](#installation)
 - [How To Play](#how-to-play)
-- [Need Support ?](#need-support-?)
+- [Need Support ?](#need-support)
 - [Future Updates](#future-updates)
 </details>
 
@@ -40,7 +40,7 @@ and change your directory to the desired download location. The [change director
 
 The game initially launches with a welcome screen explaining how the game operates, what the desired inputs are, and tells the user to enter `yes` if they're ready to play or `no` if they want to exit the game. In any part of the applicaiton that requests user input, if you input any other than the desired entry, you'll get an error screen. That error screen will only show 3 times and then the program will exit. If you *are* entering the desired input and are still seeing the error screen, then you'll need to go down to the [Need Support?](#need-support?) section of this read me file and see how to post your issues to the issues tab of the repository so that I can figure out the problem, and help find a solution. I digress, the game is simple. It asks the user if they're ready to play, then to select a difficulty level, then to select the game they want to play, and how many questions they want to answer. From there, the computer grabs random numbers and presents the user with a math question to which they'll need to answer. **This game is still under developement. There are currently no re-tries on answers. This will be implemented at a later date as I become more rounded with C#.** After you've answered the desired amount of questions, the game will end and an End Game Screen will display asking the user a `yes` or `no` question on whether they would like to play again.
 
-# Need Support ?
+# Need Support
 
 In the event that the game starts to mess up, you're welcome to post your issue on the [issues](https://github.com/mekasu0124/MeksMathGame/issues) page. Before you post an issue to the issues page, please be sure that you have read the [guide on posting a good issue](https://github.com/codeforamerica/howto/blob/master/Good-GitHub-Issues.md) so that you can ensure that your issue is seen and responded to. I'm not a dick, and I'm not going to purposefully ignore anyones issues, but if your issue isn't posted in a well-written manor, then it's going to lead to more questions from me than answers.
 
