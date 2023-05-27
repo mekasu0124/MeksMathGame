@@ -1,0 +1,2 @@
+C:\Users\Mekas\OneDrive\Documents\my_projects\VisualStudioProjects\DesktopApps\MeksMathGame\Builds\MacBuild\MeksMathGame.pdb
+C:\Users\Mekas\OneDrive\Documents\my_projects\VisualStudioProjects\DesktopApps\MeksMathGame\Builds\MacBuild\MeksMathGame
