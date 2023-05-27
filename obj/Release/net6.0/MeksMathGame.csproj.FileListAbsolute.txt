@@ -1,0 +1,15 @@
+C:\Users\Mekas\OneDrive\Documents\my_projects\VisualStudioProjects\DesktopApps\MeksMathGame\bin\Release\net6.0\MeksMathGame.exe
+C:\Users\Mekas\OneDrive\Documents\my_projects\VisualStudioProjects\DesktopApps\MeksMathGame\bin\Release\net6.0\MeksMathGame.deps.json
+C:\Users\Mekas\OneDrive\Documents\my_projects\VisualStudioProjects\DesktopApps\MeksMathGame\bin\Release\net6.0\MeksMathGame.runtimeconfig.json
+C:\Users\Mekas\OneDrive\Documents\my_projects\VisualStudioProjects\DesktopApps\MeksMathGame\bin\Release\net6.0\MeksMathGame.dll
+C:\Users\Mekas\OneDrive\Documents\my_projects\VisualStudioProjects\DesktopApps\MeksMathGame\bin\Release\net6.0\MeksMathGame.pdb
+C:\Users\Mekas\OneDrive\Documents\my_projects\VisualStudioProjects\DesktopApps\MeksMathGame\obj\Release\net6.0\MeksMathGame.csproj.AssemblyReference.cache
+C:\Users\Mekas\OneDrive\Documents\my_projects\VisualStudioProjects\DesktopApps\MeksMathGame\obj\Release\net6.0\MeksMathGame.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mekas\OneDrive\Documents\my_projects\VisualStudioProjects\DesktopApps\MeksMathGame\obj\Release\net6.0\MeksMathGame.AssemblyInfoInputs.cache
+C:\Users\Mekas\OneDrive\Documents\my_projects\VisualStudioProjects\DesktopApps\MeksMathGame\obj\Release\net6.0\MeksMathGame.AssemblyInfo.cs
+C:\Users\Mekas\OneDrive\Documents\my_projects\VisualStudioProjects\DesktopApps\MeksMathGame\obj\Release\net6.0\MeksMathGame.csproj.CoreCompileInputs.cache
+C:\Users\Mekas\OneDrive\Documents\my_projects\VisualStudioProjects\DesktopApps\MeksMathGame\obj\Release\net6.0\MeksMathGame.dll
+C:\Users\Mekas\OneDrive\Documents\my_projects\VisualStudioProjects\DesktopApps\MeksMathGame\obj\Release\net6.0\refint\MeksMathGame.dll
+C:\Users\Mekas\OneDrive\Documents\my_projects\VisualStudioProjects\DesktopApps\MeksMathGame\obj\Release\net6.0\MeksMathGame.pdb
+C:\Users\Mekas\OneDrive\Documents\my_projects\VisualStudioProjects\DesktopApps\MeksMathGame\obj\Release\net6.0\MeksMathGame.genruntimeconfig.cache
+C:\Users\Mekas\OneDrive\Documents\my_projects\VisualStudioProjects\DesktopApps\MeksMathGame\obj\Release\net6.0\ref\MeksMathGame.dll
