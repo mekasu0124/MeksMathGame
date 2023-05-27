@@ -65,7 +65,7 @@ namespace MeksMathGame
                 "Some Rules Of Thumb To Remember While Playing:",
                 "1) All Answers Are In The Form Of An Integer.",
                 "2) If Your Division Answer Gives You A Decimal Like: 0.86, Then Your Answer Is 0",
-                "3) This Game Has 5 Difficulties: Easy, Medium, Hard, Expert, and Master.",
+                "3) This Game Has 3 Difficulties: Easy, Medium, and Hard.",
                 "4) None Of The Numbers You Will Encounter On Any Difficulty Will Go Higher Than 100.\n"
             };
 
