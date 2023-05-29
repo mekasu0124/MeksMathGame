@@ -1,7 +1,28 @@
-﻿class MainMenu
+﻿using MeksMathGame;
+
+class MainMenu
 {
+    public int tries = 3;
+
+    public void InputInvalid(string error)
+    {
+        if (tries > 0)
+        {
+            tries--;
+            Console.WriteLine("\n" + error + " " + tries + " Tries Left.");
+        }
+        else
+        {
+            Console.WriteLine("\nMaximum Number Attempts Reached. Exiting Program.");
+            Thread.Sleep(2000);
+            Environment.Exit(0);
+        }
+    }
+
     public void DifficultySelection()
     {
+        Console.ForegroundColor = ConsoleColor.White;
+
         List<string> gameDiffs = new()
         {
             "easy",
@@ -9,109 +30,78 @@
             "hard"
         };
 
-        for (int i = 0; i < gameDiffs.Count; i++)
+        foreach (string text in gameDiffs)
         {
-            Console.WriteLine(i + 1 + ") " + gameDiffs[i]);
+            Console.WriteLine(text);
         };
 
         Console.ForegroundColor = ConsoleColor.White;
         Console.Write("Please Select A Difficulty: ");
 
-        string userSelectDiff = Console.ReadLine();
+        string userSelectedDiff;
 
-        // instantiate a tries variable
-        int tries = 3;
-
-        if (gameDiffs.Contains(userSelectDiff))
+        for (int i = 0; i < 3; i++)
         {
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("\nDifficulty: " + userSelectDiff + "\n");
-            Thread.Sleep(2000);
-            GameSelection(userSelectDiff);
-        }
-        else
-        {
-            Console.ForegroundColor= ConsoleColor.Red;
-            Console.WriteLine(
-                "Invalid Selection. Please Select From The Available Menu With All Lower " +
-                "Case Spelling. If This Problem Persists, Then Contact Support At: " +
-                "https://github.com/mekasu0124/MeksMathGame/issues"
-            );
+            userSelectedDiff = Console.ReadLine();
 
-            Thread.Sleep(2000);
-
-            // decrement tries by 1
-            tries--;
-
-            if (tries > 0)
+            if (gameDiffs.Contains(userSelectedDiff))
             {
-                // allow the user to try again
-                DifficultySelection();
+                break;
             }
             else
             {
-                // otherwise, exit the program to prevent unecessary loop
-                Environment.Exit(0);
+                InputInvalid("Enter Either easy, medium, or hard");
             }
         }
+
+        Console.WriteLine("\nDifficulty: " + userSelectedDiff);
+        Thread.Sleep(2000);
+
+        GameSelection(userSelectedDiff);
     }
 
     public void GameSelection(string difficulty)
     {
         Console.ForegroundColor = ConsoleColor.White;
+        Console.WriteLine("\n");
 
         List<string> gameTypes = new()
         {
-            "addition",
-            "subtraction",
-            "multiplication",
-            "division"
+            "Addition",
+            "Subtraction",
+            "Multiplication",
+            "Division"
         };
 
-        for (int i = 0; i < gameTypes.Count;i++)
+        foreach (string text in gameTypes)
         {
-            Console.Write(i + 1 + ") " + gameTypes[i] + "\n");
+            Console.WriteLine(text);
         };
 
         Console.Write("\nPlease Select A Game To Play: ");
 
-        string userSelectedGame = Console.ReadLine();
-
-        // instantiate a tries variable
-        int tries = 3;
-
-        if (gameTypes.Contains(userSelectedGame))
+        for (int i = 0; i < 3; i++)
         {
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("\nDifficulty: " + difficulty + "\nGame: " +  userSelectedGame + "\n");
+            string userSelectedGame = Console.ReadLine();
 
-            GetDesiredQuestions(difficulty, userSelectedGame);
-        }
-        else
-        {
-            Console.ForegroundColor= ConsoleColor.Red;
-            Console.WriteLine(
-                "Invalid Selection. Please Select From The Available Menu With All Lower " +
-                "Case Spelling. If This Problem Persists, Then Contact Support At: " +
-                "https://github.com/mekasu0124/MeksMathGame/issues"
-            );
-
-            Thread.Sleep(2000);
-
-            // decrement tries by 1
-            tries--;
-
-            if (tries > 0)
+            if (gameTypes.Contains(userSelectedGame, StringComparer.OrdinalIgnoreCase))
             {
-                // allow the user to try again
-                GameSelection(difficulty);
+                Console.WriteLine("\nDifficulty: " + difficulty + "\nGame: " + userSelectedGame);
+                Thread.Sleep(2000);
+
+                GetDesiredQuestions(difficulty, userSelectedGame.ToLower());
+                break;
             }
             else
             {
-                // otherwise, exit the program to prevent unecessary loop
-                Environment.Exit(0);
+                Console.WriteLine("Enter A Game Choice: addition, subtraction, multiplication" +
+                    " Or division.");
             }
         }
+
+        Console.WriteLine("Maximum Number Of Attempts Reached. Exiting Program. . .");
+        Thread.Sleep(2000);
+        Environment.Exit(0);
     }
 
     public void GetDesiredQuestions(string difficulty, string userSelectedGame)
@@ -119,51 +109,62 @@
         Console.ForegroundColor = ConsoleColor.White;
         Console.Write("\nPlease Enter The Amount Of Questions You'd Like To Answer (1-100): ");
 
-        int userDesiredQuestionAmount = Convert.ToInt32(Console.ReadLine());
-
-        // instantiate a tries variable
-        int tries = 3;
-
-        if (userDesiredQuestionAmount > 100 || userDesiredQuestionAmount > 0)
+        for (int i = 0; i < 3; i++)
         {
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine(
-                "\nDifficulty: " + difficulty +
-                "\nGame: " + userSelectedGame +
-                "\nQuestions: " + userDesiredQuestionAmount + "\n"
-            );
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("\nLaunching Game...");
-            Thread.Sleep(3000);
-            Console.Clear();
-
-            GameBrain gameBrain = new GameBrain();
-            gameBrain.LaunchSequence(difficulty, userSelectedGame, userDesiredQuestionAmount);
-        }
-        else
-        {
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine(
-                "Invalid Selection. Please Enter A Number Between 1 and 100. If This " +
-                "Problem Persists, Then Contact Support At: " +
-                "https://github.com/mekasu0124/MeksMathGame/issues"
-            );
-
-            Thread.Sleep(2000);
-
-            // decrement tries by 1
-            tries--;
-
-            if (tries > 0)
+            if (!int.TryParse(Console.ReadLine(), out int numOfQuestions))
             {
-                // allow the user to try again
-                GetDesiredQuestions(difficulty, userSelectedGame);
+                Console.WriteLine("Enter An Integer, or Whole Number For Your Choice.");
+            }
+            else if (numOfQuestions < 1 || numOfQuestions > 100)
+            {
+                Console.WriteLine("Enter A Number Between 1 and 100");
             }
             else
             {
-                // exit the program to prevent unecessary loop
-                Environment.Exit(0);
+                Console.WriteLine("\nDifficulty: " + difficulty + "\nGame: " + userSelectedGame + "\nQuestions: " + numOfQuestions);
+                Thread.Sleep(2000);
+                LaunchGameScreen(difficulty, userSelectedGame, numOfQuestions);
+                break;
             }
+        }
+
+        Console.WriteLine("Maximum Number Of Attempts Reached. Exiting Program. . .");
+        Thread.Sleep(2000);
+        Environment.Exit(0);
+    }
+
+    public void LaunchGameScreen(string difficulty, string game, int numOfQuest)
+    {
+        switch (game)
+        {
+            case "addition":
+                Console.WriteLine("\nLaunching Addition Game.");
+                break;
+
+            case "subtraction":
+                Console.WriteLine("\nLaunching Subtraction Game.");
+                break;
+
+            case "multiplication":
+                Console.WriteLine("\nLaunching Multiplication Game.");
+                break;
+
+            case "division":
+                Console.WriteLine("\nLaunching Division Game.");
+                break;
+
+            default:
+                for (int i = 0; i < 3; i++)
+                {
+                    Console.WriteLine("Invalid Operation Launching Desired Game. Trying Again. . .");
+                    Thread.Sleep(2000);
+                    LaunchGameScreen(difficulty, game, numOfQuest);
+                }
+                Console.WriteLine("Number Of Attempts Reached. Default Back To Previous Screen.");
+
+                Program program = new();
+                program.WelcomeLabel();
+                break;
         }
     }
 }

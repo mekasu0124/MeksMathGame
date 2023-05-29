@@ -77,7 +77,7 @@
         }
     }
 
-    public int PresentQuestion(int num1, int num2)
+    static int PresentQuestion(int num1, int num2)
     {
         Console.ForegroundColor = ConsoleColor.White;
         Console.WriteLine("\nWhat Is The Summation Of:");

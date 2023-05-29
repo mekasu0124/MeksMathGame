@@ -5,60 +5,76 @@ namespace MeksMathGame
 {
     class Program
     {
+        public int tries = 3;
 
-        static void GetUserInput()
+        public void InputInvalid(string error)
         {
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("When You Are Ready To Begin, Enter 'Yes' To Start, Or 'No' To Exit.\n");
-
-            string userReady = Console.ReadLine();
-
-            // instantiate a tries variable for else statement
-            int tries = 3;
-
-            if (userReady.ToLower() == "yes")
+            if (tries > 0)
             {
-                Console.WriteLine("Launching Main Menu...");
-                Thread.Sleep(3000);
-                Console.Clear();
-
-                MainMenu mainMenu = new MainMenu();
-                mainMenu.DifficultySelection();
-            }
-            else if (userReady.ToLower() == "no")
-            {
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine("Exiting Game. Please Wait.");
-                Thread.Sleep(2000);
-                Environment.Exit(0);
+                tries--;
+                Console.WriteLine("\n" + error + " " + tries + " Tries Left.");
             }
             else
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine(
-                    "Invalid Operation. Please Enter 'Yes' To Start The Game" +
-                    "or Enter 'No' To Exit The Game."
-                );
-                Thread.Sleep(1000);
+                Console.WriteLine("\nMaximum Number Attempts Reached. Exiting Program.");
+                Thread.Sleep(2000);
+                Environment.Exit(0);
+            }
+        }
+        public void GetUserInput()
+        {
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("When You Are Ready To Begin, Enter 'yes' To Start, Or 'no' To Exit.\n");
 
-                // decrement tries by 1
-                tries--;
-                // if tries is greater than 0
-                if (tries > 0)
+
+            for (int i = 0; i < 3; i++)
+            {
+                string userReady = Console.ReadLine().ToLower();
+
+                if (userReady == "yes")
                 {
-                    // allow the user to try again
-                    GetUserInput();
+                    break;
+                }
+                else if (userReady == "no")
+                {
+                    Console.WriteLine("Exiting Program. Please Wait. . .");
+                    Thread.Sleep(2000);
+                    Environment.Exit(0);
                 }
                 else
                 {
-                    // otherwise, exit the program to prevent unecessary loop
-                    Environment.Exit(0);
+                    InputInvalid("Enter yes To Begin Or no To Exit");
                 }
             }
+
+            Console.WriteLine("\nLaunching Difficulty Selection. Please Wait. . .");
+            Thread.Sleep(2000);
+            Console.Clear();
+
+            MainMenu mainMenu = new();
+            mainMenu.DifficultySelection();
         }
 
-        static void SendWelcomeText()
+        public void WelcomeLabel()
         {
+            List<string> welcomeImage = new()
+            {
+                @"  ======================================================================  ",
+                @" ||  _____________   ______   __   ____  ________   ______   __    __  || ",
+                @" || |%%%%%%%%%%%%%| |%%%%%%| |%%| /%%%/ |%%%%%%%%| |%%%%%%| |%%|  |%%| || ",
+                @" || |%%%%%%%%%%%%%| |%%%%__| |%%|/%%%/  |%%|  |%%| |%%%%%%| |%%|  |%%| || ",
+                @" || |%%|  |%|  |%%| |%%%| __ |%%%%%%/   |%%%%%%%%| |%%|     |%%|  |%%| || ",
+                @" || |%%|  |%|  |%%| |%%%%%%| |%%%%%/    |%%%%%%%%| |%%| ___ |%%|  |%%| || ",
+                @" || |%%|  |%|  |%%| |%%%%%%| |%%%%/     |%%|  |%%| |%%%%%%| |%%|  |%%| || ",
+                @" || |%%|  |%|  |%%| |%%%%__| |%%%|      |%%|  |%%| |%%%%%%| |%%|__|%%| || ",
+                @" || |%%|  |%|  |%%| |%%%|    |%%%%\     |%%|  |%%| |___%%%| |%%    %%| || ",
+                @" || |%%|  |_|  |%%| |%%%|__  |%%%%%\    |%%|  |%%|    | %%| |%%%%%%%%| || ",
+                @" || |%%|       |%%| |%%%%%%| |%%%%%%\   |%%|  |%%| |%%%%%%| |%%%%%%%%| || ",
+                @" || |__|       |__| |______| |__|\___\  |__|  |__| |______| |________| || ",
+                @" ||                                                                    || ",
+                @"  ======================================================================  "
+            };
+
             List<string> welcomeText = new()
             {
                 "Welcome To Mek's Math Game!",
@@ -69,33 +85,26 @@ namespace MeksMathGame
                 "4) None Of The Numbers You Will Encounter On Any Difficulty Will Go Higher Than 100.\n"
             };
 
-            Console.ForegroundColor = ConsoleColor.White;
-
-            for (int i = 0; i < welcomeText.Count; i++)
+            foreach (string text in welcomeImage)
             {
-                Console.WriteLine(welcomeText[i]);
+                Console.WriteLine(text);
             };
 
-            GetUserInput();
-        }
+            foreach (string text in welcomeText)
+            {
+                Console.WriteLine(text);
+            };
 
-        static void WelcomeLabel()
-        {
-            
-
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.ForegroundColor = ConsoleColor.Magenta;
-
-            SendWelcomeText();
+            Program program = new();
+            program.GetUserInput();
         }
 
         static void Main(string[] args)
         {
             Console.Title = "Mek's Math Game - Version 1.0.0";
-            WelcomeLabel();
+
+            Program program = new();
+            program.WelcomeLabel();
         }
     }
 }
