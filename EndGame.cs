@@ -22,52 +22,70 @@
         Console.WriteLine(@"||                                       ||");
         Console.WriteLine(@" ========================================= ");
 
-        Console.ForegroundColor = ConsoleColor.Cyan;
-        Console.WriteLine("The Game Has Come To An End!\nWould You Like To Play Again?");
-        Console.Write("Enter Y for Yes or N for No: ");
+        Console.ForegroundColor = ConsoleColor.White;
+        Console.WriteLine("The Game Has Come To An End!\n");
 
-        string userPlayAgain = Console.ReadLine();
-
-        // instantiate a tries variable
-        int tries = 3;
-
-        if (userPlayAgain.ToLower() == "y")
+        List<string> options = new()
         {
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("Restarting Game. Please Wait...");
-            Thread.Sleep(2000);
-            Console.Clear();
+            "Play Again",
+            "View Game History",
+            "Exit Program"
+        };
 
-            MainMenu mainMenu = new();
-            mainMenu.DifficultySelection();
-        }
-        else if (userPlayAgain.ToLower() == "n")
+        foreach (string t in options)
         {
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("You've Entered N for No. Closing Game. Please Wait...");
-            Thread.Sleep(2000);
+            Console.WriteLine(t);
+        };
 
-            Environment.Exit(0);
-        }
-        else
+        Console.WriteLine("\nWhat Would You Like To Do?");
+
+        string userOption = "";
+
+        for (int i = 0; i < 3; i++)
         {
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Invalid Selection. Please Enter Y or N To Play Again");
-            Thread.Sleep(2000);
+            userOption = Console.ReadLine();
 
-            // decrement tries by 1
-            tries--;
-
-            if (tries > 0)
+            if (options.Contains(userOption, StringComparer.OrdinalIgnoreCase))
             {
-                // allow user to try again
-                EndGameScreen();
+                break;
             }
             else
             {
-                // exit program to prevent unnecessary loop
+                Console.WriteLine("Enter A Valid Choice: Play Again, View Game History, Exit Program");
+            }
+        }
+
+        switch (userOption.ToLower())
+        {
+            case "play again":
+                Console.WriteLine("\nLaunching Main Menu. Please Wait. . .");
+                Thread.Sleep(2000);
+                Console.Clear();
+
+                MainMenu mainMenu = new();
+                mainMenu.DifficultySelection();
+                break;
+
+            case "view game history":
+                Console.WriteLine("\nLaunching Previous Game History. Please Wait. . .");
+                Thread.Sleep(2000);
+                Console.Clear();
+
+                PreviousHistory.PrintHistory();
+                break;
+
+            case "exit program":
+                Console.WriteLine("\nExiting Game. Please Wait. . .");
+                Thread.Sleep(2000);
                 Environment.Exit(0);
-            }    
+                break;
+
+            default:
+                Console.WriteLine("\nInvalid Operation Launching Desired Action.");
+                Thread.Sleep(2000);
+                Console.Clear();
+                EndGameScreen();
+                break;
         }
     }
 }

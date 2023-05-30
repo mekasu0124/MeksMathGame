@@ -19,6 +19,21 @@ class MainMenu
         }
     }
 
+    public void OperationInvalid(string error)
+    {
+        if (tries > 0)
+        {
+            tries--;
+            Console.WriteLine("\n" + error + " " + tries + " Tries Left.");
+        }
+        else
+        {
+            Console.WriteLine("\nMaximum Number Attempts Reached. Exiting Program.");
+            Thread.Sleep(2000);
+            Environment.Exit(0);
+        }
+    }
+
     public void DifficultySelection()
     {
         Console.ForegroundColor = ConsoleColor.White;
@@ -36,9 +51,9 @@ class MainMenu
         };
 
         Console.ForegroundColor = ConsoleColor.White;
-        Console.Write("Please Select A Difficulty: ");
+        Console.Write("\nPlease Select A Difficulty: ");
 
-        string userSelectedDiff;
+        string userSelectedDiff = "";
 
         for (int i = 0; i < 3; i++)
         {
@@ -80,16 +95,14 @@ class MainMenu
 
         Console.Write("\nPlease Select A Game To Play: ");
 
+        string userSelectedGame = "";
+
         for (int i = 0; i < 3; i++)
         {
-            string userSelectedGame = Console.ReadLine();
+            userSelectedGame = Console.ReadLine();
 
             if (gameTypes.Contains(userSelectedGame, StringComparer.OrdinalIgnoreCase))
             {
-                Console.WriteLine("\nDifficulty: " + difficulty + "\nGame: " + userSelectedGame);
-                Thread.Sleep(2000);
-
-                GetDesiredQuestions(difficulty, userSelectedGame.ToLower());
                 break;
             }
             else
@@ -99,9 +112,10 @@ class MainMenu
             }
         }
 
-        Console.WriteLine("Maximum Number Of Attempts Reached. Exiting Program. . .");
+        Console.WriteLine("\nDifficulty: " + difficulty + "\nGame: " + userSelectedGame);
         Thread.Sleep(2000);
-        Environment.Exit(0);
+
+        GetDesiredQuestions(difficulty, userSelectedGame.ToLower());
     }
 
     public void GetDesiredQuestions(string difficulty, string userSelectedGame)
@@ -109,9 +123,11 @@ class MainMenu
         Console.ForegroundColor = ConsoleColor.White;
         Console.Write("\nPlease Enter The Amount Of Questions You'd Like To Answer (1-100): ");
 
+        int numOfQuestions = 0;
+
         for (int i = 0; i < 3; i++)
         {
-            if (!int.TryParse(Console.ReadLine(), out int numOfQuestions))
+            if (!int.TryParse(Console.ReadLine(), out numOfQuestions))
             {
                 Console.WriteLine("Enter An Integer, or Whole Number For Your Choice.");
             }
@@ -121,16 +137,13 @@ class MainMenu
             }
             else
             {
-                Console.WriteLine("\nDifficulty: " + difficulty + "\nGame: " + userSelectedGame + "\nQuestions: " + numOfQuestions);
-                Thread.Sleep(2000);
-                LaunchGameScreen(difficulty, userSelectedGame, numOfQuestions);
                 break;
             }
         }
 
-        Console.WriteLine("Maximum Number Of Attempts Reached. Exiting Program. . .");
+        Console.WriteLine("\nDifficulty: " + difficulty + "\nGame: " + userSelectedGame + "\nQuestions: " + numOfQuestions);
         Thread.Sleep(2000);
-        Environment.Exit(0);
+        LaunchGameScreen(difficulty, userSelectedGame, numOfQuestions);
     }
 
     public void LaunchGameScreen(string difficulty, string game, int numOfQuest)
@@ -139,31 +152,36 @@ class MainMenu
         {
             case "addition":
                 Console.WriteLine("\nLaunching Addition Game.");
+                Thread.Sleep(2000);
+                Console.Clear();
+
+                AdditionGame addGame = new();
+                addGame.StartGame(difficulty, numOfQuest);
                 break;
 
             case "subtraction":
                 Console.WriteLine("\nLaunching Subtraction Game.");
+                Thread.Sleep(2000);
+                Console.Clear();
                 break;
 
             case "multiplication":
                 Console.WriteLine("\nLaunching Multiplication Game.");
+                Thread.Sleep(2000);
+                Console.Clear();
                 break;
 
             case "division":
                 Console.WriteLine("\nLaunching Division Game.");
+                Thread.Sleep(2000);
+                Console.Clear();
                 break;
 
             default:
                 for (int i = 0; i < 3; i++)
                 {
-                    Console.WriteLine("Invalid Operation Launching Desired Game. Trying Again. . .");
-                    Thread.Sleep(2000);
-                    LaunchGameScreen(difficulty, game, numOfQuest);
+                    OperationInvalid("Operation Failed To Launch Game. Trying Again.");
                 }
-                Console.WriteLine("Number Of Attempts Reached. Default Back To Previous Screen.");
-
-                Program program = new();
-                program.WelcomeLabel();
                 break;
         }
     }

@@ -4,7 +4,6 @@
 
     public void StartGame(string difficulty, int numOfQues)
     {
-        // instantiate a tries variable
         int tries = 3;
 
         SolutionChecker checkSolution = new();
@@ -60,17 +59,14 @@
 
             Thread.Sleep(2000);
             
-            // decrement tries by 1
             tries--;
 
             if (tries > 0)
             {
-                // allow the program to try again
                 StartGame(difficulty, numOfQues);
             }
             else
             {
-                // exit the program to prevent uncessary loop
                 Environment.Exit(0);
             };
             endGame.EndGameScreen();

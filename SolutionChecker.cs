@@ -2,7 +2,6 @@
 {
     public void CheckSolution(int num1, string operatorSymbol, int num2, int userSolution)
     {
-        // instantiate a tries variable
         int tries = 3;
 
         switch (operatorSymbol)
@@ -14,6 +13,7 @@
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("\nCorrect! Great Job! Next Question Incoming!");
+                    PreviousHistory.AddHistory(num1, operatorSymbol, num2, computerSolutionAdd,true);
                     Thread.Sleep(2000);
                     Console.Clear();
                 }
@@ -26,6 +26,7 @@
                         "Your Solution: " + userSolution + "\n" +
                         "Next Question Incoming!\n"
                     );
+                    PreviousHistory.AddHistory(num1, operatorSymbol, num2, computerSolutionAdd, false);
                     Thread.Sleep(2000);
                     Console.Clear();
                 }
@@ -38,6 +39,7 @@
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("\nCorrect! Great Job! Next Question Incoming!\n");
+                    PreviousHistory.AddHistory(num1, operatorSymbol, num2, computerSolutionSub, true);
                     Thread.Sleep(2000);
                     Console.Clear();
                 }
@@ -50,6 +52,7 @@
                         "Your Solution: " + userSolution + "\n" +
                         "Next Question Incoming!\n"
                     );
+                    PreviousHistory.AddHistory(num1, operatorSymbol, num2, computerSolutionSub, false);
                     Thread.Sleep(2000);
                     Console.Clear();
                 }
@@ -62,6 +65,7 @@
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("\nCorrect! Great Job! Next Question Incoming!\n");
+                    PreviousHistory.AddHistory(num1, operatorSymbol, num2, computerSolutionMult, true);
                     Thread.Sleep(2000);
                     Console.Clear();
                 }
@@ -74,6 +78,7 @@
                         "Your Solution: " + userSolution + "\n" +
                         "Next Question Incoming!\n"
                     );
+                    PreviousHistory.AddHistory(num1, operatorSymbol, num2, computerSolutionMult, false);
                     Thread.Sleep(2000);
                     Console.Clear();
                 }
@@ -86,6 +91,7 @@
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("\nCorrect! Great Job! Next Question Incoming!\n");
+                    PreviousHistory.AddHistory(num1, operatorSymbol, num2, computerSolutionDiv, true);
                     Thread.Sleep(2000);
                     Console.Clear();
                 }
@@ -98,6 +104,7 @@
                         "Your Solution: " + userSolution + "\n" +
                         "Next Question Incoming!\n"
                     );
+                    PreviousHistory.AddHistory(num1, operatorSymbol, num2, computerSolutionDiv, false);
                     Thread.Sleep(2000);
                     Console.Clear();
                 }
@@ -113,17 +120,14 @@
 
                 Thread.Sleep(2000);
 
-                // decrement tries by 1
                 tries--;
 
                 if (tries > 0)
                 {
-                    // allow the program to try again
                     CheckSolution(num1, operatorSymbol, num2, userSolution);
                 }
                 else
                 {
-                    // exit the program to prevent unnecessary loop
                     Environment.Exit(0);
                 };
                 break;

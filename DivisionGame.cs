@@ -4,7 +4,6 @@
 
     public void StartGame(string difficulty, int numOfQues)
     {
-        // instantiate a tries variable
         int tries = 3;
 
         SolutionChecker checkSolution = new();
@@ -60,23 +59,20 @@
 
             Thread.Sleep(2000);
 
-            // decrement tries by 1
             tries--;
 
             if (tries > 0)
             {
-                // allow the program to try again
                 StartGame(difficulty, numOfQues);
             }
             else
             {
-                // exit the program to prevent uncessary loop
                 Environment.Exit(0);
             };
         }
     }
 
-    public int PresentQuestion(int num1, int num2)
+    static int PresentQuestion(int num1, int num2)
     {
         Console.ForegroundColor = ConsoleColor.White;
         Console.WriteLine("\nWhat Is The Summation Of:");
