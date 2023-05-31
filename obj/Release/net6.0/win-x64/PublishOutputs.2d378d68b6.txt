@@ -1,2 +1,0 @@
-C:\Users\Mekas\Documents\my_projects\VisualStudioProjects\DesktopApps\MeksMathGame\Builds\WindowsBuild\MeksMathGame.pdb
-C:\Users\Mekas\Documents\my_projects\VisualStudioProjects\DesktopApps\MeksMathGame\Builds\WindowsBuild\MeksMathGame.exe

@@ -1,5 +1,0 @@
-C:\Users\Mekas\OneDrive\Documents\my_projects\FinishedProjectExecutables\MeksMathGame.exe
-C:\Users\Mekas\OneDrive\Documents\my_projects\FinishedProjectExecutables\MeksMathGame.dll
-C:\Users\Mekas\OneDrive\Documents\my_projects\FinishedProjectExecutables\MeksMathGame.deps.json
-C:\Users\Mekas\OneDrive\Documents\my_projects\FinishedProjectExecutables\MeksMathGame.runtimeconfig.json
-C:\Users\Mekas\OneDrive\Documents\my_projects\FinishedProjectExecutables\MeksMathGame.pdb

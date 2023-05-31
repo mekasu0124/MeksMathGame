@@ -1,5 +1,0 @@
-C:\Users\Mekas\OneDrive\Documents\my_projects\VisualStudioProjects\DesktopApps\MeksMathGame\Builds\LinuxBuild\MeksMathGame.exe
-C:\Users\Mekas\OneDrive\Documents\my_projects\VisualStudioProjects\DesktopApps\MeksMathGame\Builds\LinuxBuild\MeksMathGame.dll
-C:\Users\Mekas\OneDrive\Documents\my_projects\VisualStudioProjects\DesktopApps\MeksMathGame\Builds\LinuxBuild\MeksMathGame.deps.json
-C:\Users\Mekas\OneDrive\Documents\my_projects\VisualStudioProjects\DesktopApps\MeksMathGame\Builds\LinuxBuild\MeksMathGame.runtimeconfig.json
-C:\Users\Mekas\OneDrive\Documents\my_projects\VisualStudioProjects\DesktopApps\MeksMathGame\Builds\LinuxBuild\MeksMathGame.pdb
