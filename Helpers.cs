@@ -85,5 +85,17 @@ namespace MeksMathGameRewrite
             }
             return gameSelected;
         }
+
+        public static void typewriter(List<string> lines)
+        {
+            foreach (string line in lines)
+            {
+                foreach (var text in line)
+                {
+                    Console.Write(text);
+                    Thread.Sleep(60);
+                }
+            }
+        }
     }
 }

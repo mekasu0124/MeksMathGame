@@ -6,10 +6,17 @@
         internal void ShowMenu(string name, DateTime date)
         {
             Console.Clear();
-            Console.WriteLine("--------------------------------");
-            Console.WriteLine($"Hello {name}. It's {date}.\nWelcome To Your Math Game.\n");
-            Console.WriteLine("\n");
-            Console.WriteLine("Press any key to show the main menu");
+
+            List<string> introText = new()
+            {
+                "--------------------------------\n",
+                $"Hello {name}. It's {date}.\nWelcome To Your Math Game.\n",
+                "\n",
+                "Press any key to show the main menu"
+            };
+
+            Helpers.typewriter(introText);
+
             Console.ReadLine();
 
             bool isGameOn = true;
@@ -17,16 +24,22 @@
             do
             {
                 Console.Clear();
-                Console.WriteLine(@$"
-What game would you like to play today? Choose from the options below:
-A - Addition
-S - Subtraction
-M - Multiplication
-D - Division
-Q - Quit Game
-V - Previous Games");
-                Console.WriteLine("---------------------------------");
-                Console.Write("Your Selection: ");
+
+                List<string> strings = new()
+                {
+                    "What game would you like to play today? Choose from the options below:\n",
+                    "A - Addition\n",
+                    "S - Subtraction\n",
+                    "M - Multiplication\n",
+                    "D - Division\n",
+                    "Q - Quit Game\n",
+                    "V - Previous Games\n",
+                    "\n",
+                    "---------------------------------\n",
+                    "Your Selection: "
+                };
+
+                Helpers.typewriter(strings);
 
                 var gameSelected = Console.ReadLine();
                 gameSelected = Helpers.GetGame(gameSelected);
@@ -67,7 +80,8 @@ V - Previous Games");
 
         string GetName()
         {
-            Console.WriteLine("Enter Your Name");
+            string getName = "Enter Your Name";
+
             var name = Console.ReadLine();
             return name;
         }
