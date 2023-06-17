@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "Snk6RdcH+DE1Zm5Ps0OBLVJVfaR9yAXgTWOey6dVDDPRC8mg2+rN5l2NcLyvNenO7O3wynxyPozXT8rTazXHyA==",
+  "dgSpecHash": "7bd7vSoyTI39+Umgzzll/QgAVwpVUx52JlKSZiE6t8MTtmDP1xWPN24h62ELjnnZPuZ6ou7C5Va0RwetMwnHvQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Mekas\\Documents\\my_projects\\VisualStudioProjects\\DesktopApps\\MeksMathGame\\MeksMathGameRewrite.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Mekas\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\6.0.18\\microsoft.netcore.app.runtime.win-x64.6.0.18.nupkg.sha512",
+    "C:\\Users\\Mekas\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\6.0.18\\microsoft.windowsdesktop.app.runtime.win-x64.6.0.18.nupkg.sha512",
+    "C:\\Users\\Mekas\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\6.0.18\\microsoft.aspnetcore.app.runtime.win-x64.6.0.18.nupkg.sha512",
+    "C:\\Users\\Mekas\\.nuget\\packages\\microsoft.netcore.app.crossgen2.win-x64\\6.0.18\\microsoft.netcore.app.crossgen2.win-x64.6.0.18.nupkg.sha512"
+  ],
   "logs": []
 }

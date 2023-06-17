@@ -7,18 +7,6 @@
         {
             Console.Clear();
 
-            List<string> introText = new()
-            {
-                "--------------------------------\n",
-                $"Hello {name}. It's {date}.\nWelcome To Your Math Game.\n",
-                "\n",
-                "Press any key to show the main menu"
-            };
-
-            Helpers.typewriter(introText);
-
-            Console.ReadLine();
-
             bool isGameOn = true;
 
             do
@@ -27,6 +15,9 @@
 
                 List<string> strings = new()
                 {
+                    "--------------------------------\n",
+                    $"Hello {name}. It's {date}.\nWelcome To Your Math Game.\n",
+                    "\n",
                     "What game would you like to play today? Choose from the options below:\n",
                     "A - Addition\n",
                     "S - Subtraction\n",

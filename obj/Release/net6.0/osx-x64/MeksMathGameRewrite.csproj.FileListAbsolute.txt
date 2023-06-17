@@ -1,0 +1,15 @@
+C:\Users\Mekas\Documents\my_projects\VisualStudioProjects\DesktopApps\MeksMathGame\bin\Release\net6.0\osx-x64\MeksMathGameRewrite
+C:\Users\Mekas\Documents\my_projects\VisualStudioProjects\DesktopApps\MeksMathGame\bin\Release\net6.0\osx-x64\MeksMathGameRewrite.deps.json
+C:\Users\Mekas\Documents\my_projects\VisualStudioProjects\DesktopApps\MeksMathGame\bin\Release\net6.0\osx-x64\MeksMathGameRewrite.runtimeconfig.json
+C:\Users\Mekas\Documents\my_projects\VisualStudioProjects\DesktopApps\MeksMathGame\bin\Release\net6.0\osx-x64\MeksMathGameRewrite.dll
+C:\Users\Mekas\Documents\my_projects\VisualStudioProjects\DesktopApps\MeksMathGame\bin\Release\net6.0\osx-x64\MeksMathGameRewrite.pdb
+C:\Users\Mekas\Documents\my_projects\VisualStudioProjects\DesktopApps\MeksMathGame\obj\Release\net6.0\osx-x64\MeksMathGameRewrite.csproj.AssemblyReference.cache
+C:\Users\Mekas\Documents\my_projects\VisualStudioProjects\DesktopApps\MeksMathGame\obj\Release\net6.0\osx-x64\MeksMathGameRewrite.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mekas\Documents\my_projects\VisualStudioProjects\DesktopApps\MeksMathGame\obj\Release\net6.0\osx-x64\MeksMathGameRewrite.AssemblyInfoInputs.cache
+C:\Users\Mekas\Documents\my_projects\VisualStudioProjects\DesktopApps\MeksMathGame\obj\Release\net6.0\osx-x64\MeksMathGameRewrite.AssemblyInfo.cs
+C:\Users\Mekas\Documents\my_projects\VisualStudioProjects\DesktopApps\MeksMathGame\obj\Release\net6.0\osx-x64\MeksMathGameRewrite.csproj.CoreCompileInputs.cache
+C:\Users\Mekas\Documents\my_projects\VisualStudioProjects\DesktopApps\MeksMathGame\obj\Release\net6.0\osx-x64\MeksMathGameRewrite.dll
+C:\Users\Mekas\Documents\my_projects\VisualStudioProjects\DesktopApps\MeksMathGame\obj\Release\net6.0\osx-x64\refint\MeksMathGameRewrite.dll
+C:\Users\Mekas\Documents\my_projects\VisualStudioProjects\DesktopApps\MeksMathGame\obj\Release\net6.0\osx-x64\MeksMathGameRewrite.pdb
+C:\Users\Mekas\Documents\my_projects\VisualStudioProjects\DesktopApps\MeksMathGame\obj\Release\net6.0\osx-x64\MeksMathGameRewrite.genruntimeconfig.cache
+C:\Users\Mekas\Documents\my_projects\VisualStudioProjects\DesktopApps\MeksMathGame\obj\Release\net6.0\osx-x64\ref\MeksMathGameRewrite.dll

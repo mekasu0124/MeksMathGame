@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "dais1PiB++T/5fu+mGvZhJde0qHoh4TQQYsour8rgfLyxdGcgqKibFpTLOUDp0rA59oirFw2cg6iDDSFE4reBQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Mekas\\Documents\\my_projects\\VisualStudioProjects\\DesktopApps\\MeksMathGame\\MeksMathGameRewrite.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Mekas\\.nuget\\packages\\microsoft.netcore.app.host.linux-x64\\6.0.18\\microsoft.netcore.app.host.linux-x64.6.0.18.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -65,7 +65,12 @@ namespace MeksMathGameRewrite
         }
         internal static string GetName()
         {
-            Console.WriteLine("Please Enter Your Name:");
+            List<string> startText = new()
+            {
+                "Welcome To Mek's Math Game!\n",
+                "Please Enter Your Name: "
+            };
+            typewriter(startText);
 
             var name = Console.ReadLine();
 

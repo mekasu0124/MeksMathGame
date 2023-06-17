@@ -17,7 +17,13 @@ namespace MeksMathGameRewrite
                 var num1 = divisionNumbers[0];
                 var num2 = divisionNumbers[1];
 
-                Console.WriteLine($"{num1} / {num2}");
+                List<string> questionText = new()
+                {
+                    $"Question #{i+1}\n",
+                    $"{num1} / {num2}"
+                };
+                Helpers.typewriter(questionText);
+
                 var result = Console.ReadLine();
 
                 result = Helpers.ValidateResult(result);
@@ -58,7 +64,13 @@ namespace MeksMathGameRewrite
                 num1 = random.Next(1, 9);
                 num2 = random.Next(1, 9);
 
-                Console.WriteLine($"{num1} * {num2}");
+                List<string> questionText = new()
+                {
+                    $"Question #{i+1}\n",
+                    $"{num1} * {num2}"
+                };
+                Helpers.typewriter(questionText);
+
                 var result = Console.ReadLine();
 
                 result = Helpers.ValidateResult(result);
@@ -99,7 +111,13 @@ namespace MeksMathGameRewrite
                 num1 = random.Next(1, 9);
                 num2 = random.Next(1, 9);
 
-                Console.WriteLine($"{num1} - {num2}");
+                List<string> questionText = new()
+                {
+                    $"Question #{i+1}\n",
+                    $"{num1} - {num2}"
+                };
+                Helpers.typewriter(questionText);
+
                 var result = Console.ReadLine();
 
                 result = Helpers.ValidateResult(result);
@@ -140,7 +158,13 @@ namespace MeksMathGameRewrite
                 num1 = random.Next(1, 9);
                 num2 = random.Next(1, 9);
 
-                Console.WriteLine($"{num1} + {num2}");
+                List<string> questionText = new()
+                {
+                    $"Question #{i+1}\n",
+                    $"{num1} + {num2}"
+                };
+                Helpers.typewriter(questionText);
+
                 var result = Console.ReadLine();
 
                 result = Helpers.ValidateResult(result);
