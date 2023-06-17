@@ -4,11 +4,11 @@ namespace MeksMathGameRewrite
 {
     internal class GameEngine
     {
-        internal void DivisionGame(string message)
+        internal void DivisionGame(string message, int numOfQuestions)
         {
             var score = 0;
 
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < numOfQuestions; i++)
             {
                 Console.Clear();
                 Console.WriteLine(message);
@@ -20,7 +20,8 @@ namespace MeksMathGameRewrite
                 List<string> questionText = new()
                 {
                     $"Question #{i+1}\n",
-                    $"{num1} / {num2}"
+                    $"{num1} / {num2}\n",
+                    "Your Answer: "
                 };
                 Helpers.typewriter(questionText);
 
@@ -40,7 +41,7 @@ namespace MeksMathGameRewrite
                     Console.ReadLine();
                 }
 
-                if (i == 4)
+                if (i == (numOfQuestions - 1))
                 {
                     Console.WriteLine($"Game Over. Your final score is {score}. Press Any Key To Go Back To The Main Menu.");
                     Console.ReadLine();
@@ -49,14 +50,14 @@ namespace MeksMathGameRewrite
 
             Helpers.AddToHistory(score, GameType.Division);
         }
-        internal void MultiplicationGame(string message)
+        internal void MultiplicationGame(string message, int numOfQuestions)
         {
             var random = new Random();
             var score = 0;
             int num1;
             int num2;
 
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < numOfQuestions; i++)
             {
                 Console.Clear();
                 Console.WriteLine(message);
@@ -67,7 +68,8 @@ namespace MeksMathGameRewrite
                 List<string> questionText = new()
                 {
                     $"Question #{i+1}\n",
-                    $"{num1} * {num2}"
+                    $"{num1} * {num2}\n",
+                    "Your Answer: "
                 };
                 Helpers.typewriter(questionText);
 
@@ -87,7 +89,7 @@ namespace MeksMathGameRewrite
                     Console.ReadLine();
                 }
 
-                if (i == 4)
+                if (i == (numOfQuestions - 1))
                 {
                     Console.WriteLine($"Game Over. Your final score is {score}. Press Any Key To Go Back To The Main Menu.");
                     Console.ReadLine();
@@ -96,14 +98,14 @@ namespace MeksMathGameRewrite
 
             Helpers.AddToHistory(score, GameType.Multiplication);
         }
-        internal void SubtractionGame(string message)
+        internal void SubtractionGame(string message, int numOfQuestions)
         {
             var random = new Random();
             var score = 0;
             int num1;
             int num2;
 
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < numOfQuestions; i++)
             {
                 Console.Clear();
                 Console.WriteLine(message);
@@ -114,7 +116,8 @@ namespace MeksMathGameRewrite
                 List<string> questionText = new()
                 {
                     $"Question #{i+1}\n",
-                    $"{num1} - {num2}"
+                    $"{num1} - {num2}\n",
+                    "Your Answer: "
                 };
                 Helpers.typewriter(questionText);
 
@@ -134,7 +137,7 @@ namespace MeksMathGameRewrite
                     Console.ReadLine();
                 }
 
-                if (i == 4)
+                if (i == (numOfQuestions-1))
                 {
                     Console.WriteLine($"Game Over. Your final score is {score}. Press Any Key To Go Back To The Main Menu.");
                     Console.ReadLine();
@@ -143,14 +146,14 @@ namespace MeksMathGameRewrite
 
             Helpers.AddToHistory(score, GameType.Subtraction);
         }
-        internal void AdditionGame(string message)
+        internal void AdditionGame(string message, int numOfQuestions)
         {
             var random = new Random();
             var score = 0;
             int num1;
             int num2;
 
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < numOfQuestions; i++)
             {
                 Console.Clear();
                 Console.WriteLine(message);
@@ -161,7 +164,8 @@ namespace MeksMathGameRewrite
                 List<string> questionText = new()
                 {
                     $"Question #{i+1}\n",
-                    $"{num1} + {num2}"
+                    $"{num1} + {num2}\n",
+                    "Your Answer: "
                 };
                 Helpers.typewriter(questionText);
 
@@ -181,7 +185,7 @@ namespace MeksMathGameRewrite
                     Console.ReadLine();
                 }
 
-                if (i == 4)
+                if (i == (numOfQuestions - 1))
                 {
                     Console.WriteLine($"Game Over. Your final score is {score}. Press Any Key To Go Back To The Main Menu.");
                     Console.ReadLine();

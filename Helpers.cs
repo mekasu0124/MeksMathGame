@@ -102,5 +102,13 @@ namespace MeksMathGameRewrite
                 }
             }
         }
+        public static void typerwriter2(string line)
+        {
+            foreach (var t in line)
+            {
+                Console.Write(t);
+                Thread.Sleep(60);
+            }
+        }
     }
 }

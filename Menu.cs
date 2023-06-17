@@ -18,7 +18,7 @@
                     "--------------------------------\n",
                     $"Hello {name}. It's {date}.\nWelcome To Your Math Game.\n",
                     "\n",
-                    "What game would you like to play today? Choose from the options below:\n",
+                    "What game would you like to play today?\nChoose from the options below:\n",
                     "A - Addition\n",
                     "S - Subtraction\n",
                     "M - Multiplication\n",
@@ -35,22 +35,25 @@
                 var gameSelected = Console.ReadLine();
                 gameSelected = Helpers.GetGame(gameSelected);
 
+                Helpers.typerwriter2("How Many Questions Would You Like To Answer: ");
+                int numOfQuestions = Convert.ToInt32(Console.ReadLine());
+
                 switch (gameSelected.Trim().ToLower())
                 {
                     case "a":
-                        gameEngine.AdditionGame("Addition Game");
+                        gameEngine.AdditionGame("Addition Game", numOfQuestions);
                         break;
 
                     case "s":
-                        gameEngine.SubtractionGame("Subtraction Game");
+                        gameEngine.SubtractionGame("Subtraction Game", numOfQuestions);
                         break;
 
                     case "m":
-                        gameEngine.MultiplicationGame("Multiplication Game");
+                        gameEngine.MultiplicationGame("Multiplication Game", numOfQuestions);
                         break;
 
                     case "d":
-                        gameEngine.DivisionGame("Division Game");
+                        gameEngine.DivisionGame("Division Game", numOfQuestions);
                         break;
 
                     case "q":
